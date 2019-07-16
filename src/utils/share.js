@@ -6,17 +6,14 @@ var params = new URLSearchParams()
 params.append('url', href)
 axios({
   method: 'post',
-  url: "/share",
+  url: '/share',
   data: params
 })
   .then(res => {
-    wxshare(res.data, "");
-  });
+    wxshare(res.data, '')
+  })
 
-
-
-
-export const wxshare=(data, url)=> {
+export const wxshare = (data, url) => {
   var url = window.location.href
   var appId = data.data.appid
   var timestamp = data.data.timestamp
@@ -30,11 +27,10 @@ export const wxshare=(data, url)=> {
     nonceStr: nonceStr,
     signature: signature,
     jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline']
-  });
+  })
 
   wx.ready(function () {
-
-    //分享朋友圈
+    // 分享朋友圈
     wx.onMenuShareTimeline({
       title: titles,
       desc: descs,
@@ -46,15 +42,15 @@ export const wxshare=(data, url)=> {
       cancel: function () {
 
       }
-    });
+    })
     // 分享好友
     wx.onMenuShareAppMessage({
       title: titles,
       desc: descs,
       link: url,
       imgUrl: imgurls,
-      type: "",
-      dataUrl: "",
+      type: '',
+      dataUrl: '',
       success: function () {
       },
       cancel: function () {

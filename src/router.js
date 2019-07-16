@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
+// console.log(process.env.VUE_APP_URL)
 
 export default new Router({
   mode: 'history',
@@ -22,14 +23,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path:'/test',
-      name:'test',
-      component:()=> import('./views/Test.vue')
+      path: '/test',
+      name: 'test',
+      component: () => import('./views/Test.vue')
     },
     {
-      path:'/index',
-      name:'index',
-      component:()=> import('./views/Index.vue')
+      path: '/index',
+      name: 'index',
+      component: () => import('./views/Index.vue')
     }
   ]
 })

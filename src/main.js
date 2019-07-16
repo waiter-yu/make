@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-import 'lib-flexible/flexible'
+// import 'lib-flexible/flexible'
+import './rem'
+import './assets/common.css'
 Vue.config.productionTip = false
 
 new Vue({
