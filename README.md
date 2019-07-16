@@ -1,29 +1,29 @@
 # wish-tree
 
-## 下载依赖
+## Project setup
 ```
 yarn install
 ```
 
-### 编译
+### Compiles and hot-reloads for development
 ```
 yarn run serve
 ```
 
-### 打包
+### Compiles and minifies for production
 ```
 yarn run build
 ```
 
-### 运行测试
+### Run your tests
 ```
 yarn run test
 ```
 
-### 提示和修复文件
+### Lints and fixes files
 ```
 yarn run lint
 ```
 
-### 自定义配置
+### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
