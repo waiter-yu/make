@@ -2,6 +2,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 * {
@@ -9,4 +10,59 @@ body {
     padding: 0;
     box-sizing: border-box;
     /*css3内减模式，忽略border和padding的影响*/
+}
+
+.van-toast--text,
+.van-toast {
+    padding: 20px 30px;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+.van-swipe__indicator {
+    width: 20px;
+    height: 20px;
+}
+
+.van-ellipsis {
+    font-size: 26px
+}
+
+.van-tabs--line .van-tabs__wrap {
+    padding: 20px 0px;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+}
+
+.van-action-sheet__item {
+    height: 100px;
+    line-height: 100px;
+    font-size: 32px;
+}
+
+.van-ellipsis {
+    font-size: 34px
+}
+
+.around {
+    animation: paopao 4s infinite;
+}
+
+@keyframes paopao {
+    0% {
+        transform: translateY(0px)
+    }
+    50% {
+        transform: translateY(5px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.van-tabs {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 100px;
 }

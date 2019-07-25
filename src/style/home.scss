@@ -1,0 +1,39 @@
+$blue:#30B08F;
+@mixin defaultBubble{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    /*background-color: red;*/
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+@mixin bubbleWithTopLeft($marginTop,$marginLeft){
+
+  @include defaultBubble();
+  margin-top: $marginTop;
+  margin-left: $marginLeft;
+
+}
+
+
+@mixin popular-head-title{
+  width: 250px;
+  text-align: center;
+  font-size:28px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height: 30px;
+}
+
+@mixin popular-item-title{
+  width:152px;
+  height:30px;
+  font-size:28px;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:30px;
+  text-align: center;
+}

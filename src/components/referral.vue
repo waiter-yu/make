@@ -1,0 +1,180 @@
+<template>
+  <div>
+    <div class="notice_box" v-if="displayshow">
+      <div class="tips_box">
+        <h3>活动介绍</h3>
+        <div class="xian"></div>
+        <p>
+        
+       <strong> 【活动规则】</strong></br>
+                 &nbsp;1、每人许愿1次，有机会获得<span class="s2">大师愿望加持</span></br>
+                 &nbsp;2、愿望被支持次数越多，显示位置越靠前</br>
+                 &nbsp;3、愿望可分享邀请支持，参与排名获奖</br>
+                 &nbsp;4、支持数<span class="s2">前十</span>用户，皆可<span class="s2">获得开光吉品</span></br>
+                 &nbsp;5、奖品包括：姻缘绳、平安符、财运链等</br></br>
+
+          <strong>【温馨提醒】</strong></br>
+               &nbsp;1、第一轮有奖活动已结束（7.19-7.21）</br>
+               &nbsp;2、若有愿望，亦可进行许愿，心灵则成</br>
+               </br>
+                   <strong>【联系方式】</strong></br>
+               &nbsp;&nbsp;更多答疑，请加官方客服微信：<strong>yuands369</strong></br>
+               </br>
+        </p>
+        <div class="show">
+          <a href="javascript:;" @click="shop">
+            <img src="../assets/home/popup_close_button@2x.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      displayshow: true,
+      value: "",
+      num: 0,
+      info: ""
+    }
+  },
+  methods: {
+    shop() {
+      this.displayshow = false
+    },
+    show() {
+      this.displayshow = true
+    },
+    shuru() {
+      console.log(666);
+
+    }
+  },
+  watch: {
+    info() {
+      this.num = this.info.length
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.s2{
+  color:red;
+}
+.notice_box {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  .tips_box {
+    width: 630px;
+    height: 869px;
+    background: #fff;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px;
+    position: relative;
+    .xian {
+      width: 100%;
+      height: 1px;
+      background: rgba(241, 241, 241, 1);
+      margin-top: 70px;
+    }
+    p {
+      color: #333333;
+      font-size: 28px;
+      margin-top: 20px;
+      width: 580px;
+      height: 672px;
+      overflow: auto;
+    }
+    h3 {
+      text-align: center;
+      font-size: 32px;
+      font-family: PingFang-SC-Bold;
+      font-weight: bold;
+      color: rgba(51, 51, 51, 1);
+    }
+    ul {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      li {
+        padding: 28px 24px;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+        color: rgba(51, 51, 51, 1);
+        font-size: 26px;
+        font-family: PingFang-SC-Bold;
+        font-weight: bold;
+      }
+      li.active {
+        padding: 28px 24px;
+        border-radius: 10px;
+        background: rgba(248, 235, 226, 1);
+        color: rgba(83, 47, 19, 1);
+        font-size: 26px;
+        font-family: PingFang-SC-Bold;
+        font-weight: bold;
+      }
+    }
+    .input_box {
+      margin-top: 35px;
+
+      textarea {
+        display: block;
+        width: 569px;
+        height: 409px;
+        background: rgba(245, 245, 245, 1);
+        border-radius: 10px;
+        border: none;
+        resize: none;
+        padding: 25px;
+      }
+    }
+    .num {
+      text-align: right;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(153, 153, 153, 1);
+      line-height: 38px;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    .submit {
+      width: 217px;
+      height: 76px;
+      margin: 0 auto;
+      a {
+        display: inline-block;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .show {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      bottom: -120px;
+      left: 285px;
+      a {
+        display: inline-block;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+</style>

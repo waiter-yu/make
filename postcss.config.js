@@ -2,12 +2,14 @@ module.exports = {
   "plugins": {
     "autoprefixer": {},
     "postcss-pxtorem": {
-      "rootValue": 75,
+      "rootValue": 37.5,
       "propList": [
         "*"
       ],
       "selectorBlackList":[
-        ".el-"
+        ".el-",
+        ".weui",
+        '.mu'
       ]
     }
   }
