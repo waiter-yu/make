@@ -2,7 +2,7 @@
     <div>
         <div class="notice_box" v-if="displayshow">
             <div class="tips_box">
-                <h3>用户隐私政策</h3>
+                <h3>隐私政策</h3>
                 <div class="xian"></div>
                 <p>
                      1.1引言</br>
@@ -122,9 +122,13 @@ export default {
             info: ""
         }
     },
+    mounted(){
+     
+    },
     methods: {
         shop() {
             this.displayshow = false
+            this.$emit("showgg")
         },
         show() {
             this.displayshow = true
@@ -149,22 +153,25 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
+   display: flex;
+  justify-content: center;
+  align-items: center;
   .tips_box {
     width: 630px;
     height: 869px;
     background: #fff;
     border-radius: 10px;
-    margin:auto;
-    margin-top: 10%;
+    // margin:auto;
+    // margin-top: 10%;
     padding: 30px;
     position: relative;
     .xian {
       width: 100%;
       height: 1px;
       background: rgba(241, 241, 241, 1);
-      margin-top: 70px;
+     margin-bottom: 10px;
     }
     p {
       color: #333333;
@@ -175,11 +182,18 @@ export default {
       overflow: auto;
     }
     h3 {
+      transform: translateY(-43px);
+      line-height: 82px;
+      margin: 0 auto;
+      width: 361px;
+      height: 82px;
       text-align: center;
       font-size: 32px;
       font-family: PingFang-SC-Bold;
       font-weight: bold;
-      color: rgba(51, 51, 51, 1);
+      color: #FF3E94;
+      background: url('../assets/home/img_biaoti_gaobai@2x.png') no-repeat;
+      background-size: 100%;
     }
     ul {
       margin-top: 80px;

@@ -2,18 +2,20 @@
   <div>
     <div class="notice_box" v-if="displayshow">
       <div class="tips_box">
-        <h3>许愿</h3>
+        <h3>告 白</h3>
         <div class="xian">
 
         </div>
         <div class="chackbox">
           <ul>
-            <li :class="type==1?'active':''" @click="selecttype(1)">姻缘桃花
+             <li :class="type==2?'active':''" @click="selecttype(2)">表白爱人
             </li>
-            <li :class="type==2?'active':''" @click="selecttype(2)">事业财运
+             <li :class="type==3?'active':''" @click="selecttype(3)">单身宣言
             </li>
-            <li :class="type==3?'active':''" @click="selecttype(3)">祈福求子
+            <li :class="type==1?'active':''" @click="selecttype(1)">节日祝福
             </li>
+           
+           
           </ul>
         </div>
         <div class="input_box">
@@ -39,23 +41,24 @@
 import axios from "../utils/clerk.js"
 import { setTimeout } from 'timers';
 export default {
+  props: ['share'],
   data() {
     return {
       displayshow: false,
       value: "",
       num: 0,
       info: "",
-      type: 1,
-      state:1
+      type: 2,
+      state: 1
     }
   },
   methods: {
-    tt(){
-      
+    tt() {
+
       window.scroll(0, 0);
     },
-    text(){
-    
+    text() {
+
 
 
       this.$emit('scr')
@@ -74,7 +77,7 @@ export default {
       this.type = value
     },
     submit() {
-       document.body.scrollTop = document.body.scrollHeight;
+      document.body.scrollTop = document.body.scrollHeight;
       // var input=document.getElementById("ttt");
       // input.blur();
       this.text()
@@ -93,6 +96,10 @@ export default {
         }
         this.$emit("res")
         this.displayshow = false
+        axios.get("/client/myWishingtree").then(res=>{
+this.share(res.data.data)
+        })
+        
       })
     }
   },
@@ -117,29 +124,40 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
+   display: flex;
+  justify-content: center;
+  align-items: center;
   .tips_box {
     width: 630px;
     height: 869px;
     background: #fff;
     border-radius: 10px;
-    margin: auto;
-    margin-top: 80px;
+    // margin: auto;
+    // margin-top: 80px;
+
     padding: 30px;
     position: relative;
     .xian {
       height: 1px;
       background: rgba(241, 241, 241, 1);
       width: 100%;
-      margin-top: 40px;
+      margin-top: 20px;
     }
     h3 {
+      transform: translateY(-43px);
+      line-height: 82px;
+      margin: 0 auto;
+      width: 361px;
+      height: 82px;
       text-align: center;
       font-size: 32px;
       font-family: PingFang-SC-Bold;
       font-weight: bold;
-      color: rgba(51, 51, 51, 1);
+      color: #ff3e94;
+      background: url("../assets/home/img_biaoti_gaobai@2x.png") no-repeat;
+      background-size: 100%;
     }
     ul {
       margin-top: 40px;
@@ -157,8 +175,8 @@ export default {
       li.active {
         padding: 28px 24px;
         border-radius: 10px;
-        background: rgba(255, 246, 227, 1);
-        color: rgba(255, 158, 0, 1);
+        background: #ffd5e8;
+        color: rgba(255, 62, 148, 1);
         font-size: 26px;
         font-family: PingFang-SC-Bold;
         font-weight: bold;

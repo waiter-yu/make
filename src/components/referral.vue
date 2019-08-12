@@ -1,26 +1,29 @@
 <template>
-  <div>
+  <div>                     
     <div class="notice_box" v-if="displayshow">
       <div class="tips_box">
         <h3>活动介绍</h3>
         <div class="xian"></div>
         <p>
-        
+         <strong> 【活动时间】</strong></br>
+                &nbsp;2019.8.6--2019.8.8 (00:00-23:59) </br></br>
        <strong> 【活动规则】</strong></br>
-                 &nbsp;1、每人许愿1次，有机会获得<span class="s2">大师愿望加持</span></br>
-                 &nbsp;2、愿望被支持次数越多，显示位置越靠前</br>
-                 &nbsp;3、愿望可分享邀请支持，参与排名获奖</br>
-                 &nbsp;4、支持数<span class="s2">前十</span>用户，皆可<span class="s2">获得开光吉品</span></br>
-                 &nbsp;5、奖品包括：姻缘绳、平安符、财运链等</br></br>
+                 &nbsp;1、每人可告白1次,有机会<span class="s2">获得大师加持</span></br>
+                 &nbsp;2、告白被点赞次数越多,显示位置越靠前</br>
+                 &nbsp;3、通过分享邀请支持,参与排名竞奖 </br>
+                 &nbsp;4、点赞数前十用户,<span class="s2">可获开光吉品</span></br>
+                 &nbsp;5、奖品包括：<span class="s2">姻缘绳/平安符/玛瑙链等</span></br></br>
 
           <strong>【温馨提醒】</strong></br>
-               &nbsp;1、第一轮有奖活动已结束（7.19-7.21）</br>
-               &nbsp;2、若有愿望，亦可进行许愿，心灵则成</br>
-               </br>
-                   <strong>【联系方式】</strong></br>
-               &nbsp;&nbsp;更多答疑，请加官方客服微信：<strong>yuands369</strong></br>
-               </br>
+               &nbsp;1、活动结束后,将由专人联系发奖 </br>
+               &nbsp;2、<span class="s2">请务必填写用户资料,</span>信息绝对保密</br>
+               &nbsp;3、用户亦可自行咨询,缘如易官方客服</br>
+               &nbsp;4、<span class="s2">官方客服微信:yuands369</span></br>
+               &nbsp;5、活动最终解释权归缘如易所有 </span></br>
+               &nbsp;&nbsp;<a href="JavaScript:;" @click="yinsi">《用户隐私政策》</a>
+              
         </p>
+        
         <div class="show">
           <a href="javascript:;" @click="shop">
             <img src="../assets/home/popup_close_button@2x.png" alt="">
@@ -28,6 +31,7 @@
         </div>
       </div>
     </div>
+   
   </div>
 </template>
 
@@ -50,7 +54,12 @@ export default {
     },
     shuru() {
       console.log(666);
-
+    },
+    yinsi(){
+      console.log(1);
+      
+     this.displayshow = false
+     this.$emit("showyinsi")
     }
   },
   watch: {
@@ -62,8 +71,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a{
+  text-decoration: underline;
+}
 .s2{
-  color:red;
+  color:#ff6dad;
 }
 .notice_box {
   top: 0;
@@ -71,22 +83,24 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
+   display: flex;
+  justify-content: center;
+  align-items: center;
   .tips_box {
     width: 630px;
     height: 869px;
     background: #fff;
     border-radius: 10px;
-    margin: auto;
-    margin-top: 80px;
+    // margin: auto;
+    // margin-top: 80px;
     padding: 30px;
     position: relative;
     .xian {
       width: 100%;
       height: 1px;
       background: rgba(241, 241, 241, 1);
-      margin-top: 70px;
     }
     p {
       color: #333333;
@@ -97,11 +111,18 @@ export default {
       overflow: auto;
     }
     h3 {
+       transform: translateY(-43px);
+      line-height: 82px;
+      margin: 0 auto;
+      width: 361px;
+      height: 82px;
       text-align: center;
       font-size: 32px;
       font-family: PingFang-SC-Bold;
       font-weight: bold;
-      color: rgba(51, 51, 51, 1);
+      color: #FF3E94;
+      background: url('../assets/home/img_biaoti_gaobai@2x.png') no-repeat;
+      background-size: 100%;
     }
     ul {
       margin-top: 80px;
@@ -177,4 +198,5 @@ export default {
     }
   }
 }
+
 </style>

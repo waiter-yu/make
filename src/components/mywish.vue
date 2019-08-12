@@ -17,7 +17,7 @@
                     </p>
                 </div>
                 <div class="operate">
-                    <img src="../assets/home/share_button.png" alt="" @click="toShare">
+                    <img src="../assets/home/submission_button 拷贝@2x.png" alt="" @click="toShare">
                     <!-- <img src="../assets/home/supported_button@2x.png" alt=""> -->
                 </div>
                 <div class="show">
@@ -50,8 +50,6 @@ export default {
     methods: {
       toShare(){
         this.share(this.view)
-
-
       },
         shop(){
             this.displayshow=false
@@ -75,11 +73,11 @@ export default {
     filters:{
       typefil(v){
         if(v==1){
-          return "姻缘桃花"
+          return "节日祝福"
         }else if(v==2){
-          return "事业财运"
+          return "表白爱人"
         }else if(v==3){
-          return "祈福求子"
+          return "单身宣言"
         }
       }
     }
@@ -93,19 +91,22 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .tips_box {
     width: 630px;
     height: 869px;
     background: #fff;
     border-radius: 10px;
-   margin:auto;
-    margin-top: 80px;
+  //  margin:auto;
+  //   margin-top: 80px;
     padding: 30px;
     position: relative;
     .photo_user {
-      margin-top: 30px;
+     
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -126,21 +127,25 @@ export default {
       text-align: center;
       strong {
         font-size: 32px;
-        color: #ff0000;
+        color: #FF3E94;
       }
       span {
         margin-left: 50px;
-        color: #ff0000;
+        color: #FF3E94;
       }
     }
     .content_wish {
-        margin-top: 40px;
+        padding: 30px 28px;
+      border: 1px solid rgba(255, 218, 234, 1);
+      border-radius: 10px;
+      background-color: #fff6fa;
+      margin-top: 40px;
       width: 100%;
       height: 292px;
       font-size: 28px;
       p {
         width: 100%;
-        height: 262px;
+        height: 210px;
         font-size: 28px;
         overflow: auto;
       }
@@ -156,11 +161,18 @@ export default {
         }
     }
     h3 {
+       transform: translateY(-43px);
+      line-height: 82px;
+      margin: 0 auto;
+      width: 361px;
+      height: 82px;
       text-align: center;
       font-size: 32px;
       font-family: PingFang-SC-Bold;
       font-weight: bold;
-      color: rgba(51, 51, 51, 1);
+      color: #FF3E94;
+      background: url('../assets/home/img_biaoti_gaobai@2x.png') no-repeat;
+      background-size: 100%;
     }
 
     .input_box {

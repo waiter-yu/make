@@ -31,7 +31,7 @@
   @import "../style/home.scss";
   .head{
 
-    margin-top: 45px;
+    margin-top: 0px;
     height: 100px;
     line-height: 100px;
     display: flex;
